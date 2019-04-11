@@ -1,0 +1,36 @@
+body{
+    text-align:center;
+}
+.top{
+    color:orange;
+    background-color:white;
+    margin: 0px;
+    padding: 0px;
+}
+.search_bar{
+    justify-content:right;
+}
+.top_Nav{
+ width:100%;
+}
+.top_right{
+
+}
+.bottom{
+    background-color:orange;
+    color:white;
+}
+.bottom a{
+    color:white;
+}
+.bottom a:hover{
+    color:#f0682d!important;
+}
+.navbar-light .navbar-nav .nav-link{
+    color:rgba(0,0,0,.5) !important;
+}
+.nav-item{
+    padding-left:15px;
+    padding-right:15px;
+    font-size:25px;
+}
