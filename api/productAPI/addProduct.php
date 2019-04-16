@@ -1,25 +1,20 @@
 <?php
 
-    include '../../../inc/dbConnection.php';
-    $conn = getDatabaseConnection("ottermart");
+    include '../inc/dbConnection.php';
+    $conn = getDatabaseConnection("finalProject");
     
     $arr = array();
     
     $arr[":productName"] = $_GET["productName"];
     $arr[":productDescription"] = $_GET["productDescription"];
-    $arr[":productImage"] = $_GET["productImage"];
     $arr[":productPrice"] = $_GET["productPrice"];
+    $arr[":productStock"] = $_GET["productStock"];
     $arr[":catId"] = $_GET["catId"];
+    $arr[":productImage"] = $_GET["productImage"];
   
-   $sql = "INSERT INTO om_product ( `productName`, `productDescription`, `productImage`, `productPrice`, `catId`) 
-    VALUES (:productName, :productDescription, :productImage, :productPrice, :catId)";
+    $sql = "INSERT INTO `fp_products` (`product_id`, `product_name`, `product_description`, `product_price`, `product_stock`, `cat_id`, `product_img`) 
+           VALUES (NULL, ':productName',':productDescription', ':productPrice', ':productStock', ':catId', ':productImage')";
    
     $stmt = $conn->prepare($sql);
     $stmt->execute($arr);
-    $sql ="SELECT COUNT(1) totalproducts FROM om_product";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    $records = $stmt->fetch(PDO::FETCH_ASSOC);
-    echo json_encode($records);
-    
     ?>
