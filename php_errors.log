@@ -1,0 +1,67 @@
+[16-Apr-2019 21:28:28 UTC] PHP Warning:  include(/inc/dbConnection.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336finalProject/api/createUser.php on line 2
+[16-Apr-2019 21:28:28 UTC] PHP Stack trace:
+[16-Apr-2019 21:28:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/createUser.php:0
+[16-Apr-2019 21:28:28 UTC] PHP Warning:  include(): Failed opening '/inc/dbConnection.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336finalProject/api/createUser.php on line 2
+[16-Apr-2019 21:28:28 UTC] PHP Stack trace:
+[16-Apr-2019 21:28:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/createUser.php:0
+[16-Apr-2019 21:28:28 UTC] PHP Fatal error:  Call to undefined function getDatabaseConnection() in /home/ubuntu/workspace/cst336finalProject/api/createUser.php on line 3
+[16-Apr-2019 21:28:28 UTC] PHP Stack trace:
+[16-Apr-2019 21:28:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/createUser.php:0
+[16-Apr-2019 21:29:20 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'finalProject.fp_admin' doesn't exist' in /home/ubuntu/workspace/cst336finalProject/api/createUser.php:7
+Stack trace:
+#0 /home/ubuntu/workspace/cst336finalProject/api/createUser.php(7): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336finalProject/api/createUser.php on line 7
+[16-Apr-2019 21:29:35 UTC] PHP Warning:  include(../../inc/dbConnection.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336finalProject/api/createUser.php on line 2
+[16-Apr-2019 21:29:35 UTC] PHP Stack trace:
+[16-Apr-2019 21:29:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/createUser.php:0
+[16-Apr-2019 21:29:35 UTC] PHP Warning:  include(): Failed opening '../../inc/dbConnection.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336finalProject/api/createUser.php on line 2
+[16-Apr-2019 21:29:35 UTC] PHP Stack trace:
+[16-Apr-2019 21:29:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/createUser.php:0
+[16-Apr-2019 21:29:35 UTC] PHP Fatal error:  Call to undefined function getDatabaseConnection() in /home/ubuntu/workspace/cst336finalProject/api/createUser.php on line 3
+[16-Apr-2019 21:29:35 UTC] PHP Stack trace:
+[16-Apr-2019 21:29:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/createUser.php:0
+[16-Apr-2019 21:29:46 UTC] PHP Warning:  include(/../inc/dbConnection.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336finalProject/api/createUser.php on line 2
+[16-Apr-2019 21:29:46 UTC] PHP Stack trace:
+[16-Apr-2019 21:29:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/createUser.php:0
+[16-Apr-2019 21:29:46 UTC] PHP Warning:  include(): Failed opening '/../inc/dbConnection.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336finalProject/api/createUser.php on line 2
+[16-Apr-2019 21:29:46 UTC] PHP Stack trace:
+[16-Apr-2019 21:29:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/createUser.php:0
+[16-Apr-2019 21:29:46 UTC] PHP Fatal error:  Call to undefined function getDatabaseConnection() in /home/ubuntu/workspace/cst336finalProject/api/createUser.php on line 3
+[16-Apr-2019 21:29:46 UTC] PHP Stack trace:
+[16-Apr-2019 21:29:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/createUser.php:0
+[16-Apr-2019 21:29:58 UTC] PHP Warning:  include(/inc/dbConnection.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336finalProject/api/createUser.php on line 2
+[16-Apr-2019 21:29:58 UTC] PHP Stack trace:
+[16-Apr-2019 21:29:58 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/createUser.php:0
+[16-Apr-2019 21:29:58 UTC] PHP Warning:  include(): Failed opening '/inc/dbConnection.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336finalProject/api/createUser.php on line 2
+[16-Apr-2019 21:29:58 UTC] PHP Stack trace:
+[16-Apr-2019 21:29:58 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/createUser.php:0
+[16-Apr-2019 21:29:58 UTC] PHP Fatal error:  Call to undefined function getDatabaseConnection() in /home/ubuntu/workspace/cst336finalProject/api/createUser.php on line 3
+[16-Apr-2019 21:29:58 UTC] PHP Stack trace:
+[16-Apr-2019 21:29:58 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/createUser.php:0
+[16-Apr-2019 21:30:13 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'finalProject.fp_admin' doesn't exist' in /home/ubuntu/workspace/cst336finalProject/api/createUser.php:7
+Stack trace:
+#0 /home/ubuntu/workspace/cst336finalProject/api/createUser.php(7): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336finalProject/api/createUser.php on line 7
+[16-Apr-2019 21:36:46 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336finalProject/api/createUser.php:15
+Stack trace:
+#0 /home/ubuntu/workspace/cst336finalProject/api/createUser.php(15): PDOStatement->fetchAll(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336finalProject/api/createUser.php on line 15
+[16-Apr-2019 21:37:37 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry ':user' for key 'PRIMARY'' in /home/ubuntu/workspace/cst336finalProject/api/createUser.php:14
+Stack trace:
+#0 /home/ubuntu/workspace/cst336finalProject/api/createUser.php(14): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336finalProject/api/createUser.php on line 14
+[16-Apr-2019 21:40:24 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error' in /home/ubuntu/workspace/cst336finalProject/api/createUser.php:15
+Stack trace:
+#0 /home/ubuntu/workspace/cst336finalProject/api/createUser.php(15): PDOStatement->fetch(2)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336finalProject/api/createUser.php on line 15
+[16-Apr-2019 21:44:56 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'JacobG' for key 'PRIMARY'' in /home/ubuntu/workspace/cst336finalProject/api/createUser.php:14
+Stack trace:
+#0 /home/ubuntu/workspace/cst336finalProject/api/createUser.php(14): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336finalProject/api/createUser.php on line 14
+[16-Apr-2019 21:49:40 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/ubuntu/workspace/cst336finalProject/api/createUser.php on line 17
