@@ -8,18 +8,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <link href="../css/styles.css" rel="stylesheet" type="text/css" />
-  
-  <script>
-     $(document).ready(function(){  
-
-        $("#navSearch").on("click", function(){
-          alert($("#searchInput").val());
-        });
-        
-        
-     });
-  </script>
-  
 </head>
 <body>
   
@@ -39,8 +27,7 @@
           <!-- Links -->
           <!-- Search form -->
           <form class="form-inline top_Nav search_bar">
-            <input id="searchInput" class="form-control" type="text" placeholder="Search" aria-label="Search">
-            <button id="navSearch" style="height:35px; background-color:orange; color:##7D4900;" saria-label="Search">Search</button>
+            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
           </form>
           <ul class="navbar-nav nav_right">
              <li class="nav-item top_right">
@@ -67,44 +54,50 @@
       </div>
       <!-- Collapsible content -->
   </nav>
-<!--/.Navbar--> 
-  <br>
-  <div id="demo" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ul class="carousel-indicators">
-      <li data-target="#demo" data-slide-to="0" class="active"></li>
-      <li data-target="#demo" data-slide-to="1"></li>
-      <li data-target="#demo" data-slide-to="2"></li>
-      <li data-target="#demo" data-slide-to="3"></li>
-      <li data-target="#demo" data-slide-to="4"></li>
-    </ul>
+ 
+  <div class="container">
+    <h1>Sign Up</h1>
+    <p>Please fill in this form to create an account.</p>
     
-    <!-- The slideshow -->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="../img/assets/veg1.jpg" alt="Los Angeles" width="1100" height="500">
-      </div>
-      <div class="carousel-item">
-        <img src="../img/assets/veg2.jpg" alt="Chicago" width="1100" height="500">
-      </div>
-      <div class="carousel-item">
-        <img src="../img/assets/veg3.jpg" alt="New York" width="1100" height="500">
-      </div>
-      <div class="carousel-item">
-        <img src="../img/assets/veg4.jpg" alt="New York" width="1100" height="500">
-      </div>
-      <div class="carousel-item">
-        <img src="../img/assets/veg5.jpg" alt="New York" width="1100" height="500">
-      </div>
+      
+    <label for="firstName"><b>First Name</b></label>
+    <input type="text" placeholder="First Name" name="firstName" id = "firstName" required>
+    
+    <label for="lastName"><b>Last Name</b></label>
+    <input type="text" placeholder="Last Name" name="lastName" id = "lastName" required>
+    
+    <label for="userName"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="userName" id = "userName" required>
+          
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id = "email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+    <label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label>
+
+    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" class="signupbtn">Sign Up</button>
     </div>
-    
-    <!-- Left and right controls -->
-    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#demo" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
+  </div>
+</form>
+   <hr>
+  </br></br>
+  <div class = "footer" id = "footer">
+          <footer>
+            <p>We care about you. Do not hesitate to contact us.</p>
+            <p><h3>Contact us: </h3> @ 831-000-11111 or by email:    spicy@basket.com</p>
+        </footer>
   </div>
 </body>
 </html>

@@ -8,18 +8,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <link href="../css/styles.css" rel="stylesheet" type="text/css" />
-  
-  <script>
-     $(document).ready(function(){  
-
-        $("#navSearch").on("click", function(){
-          alert($("#searchInput").val());
-        });
-        
-        
-     });
-  </script>
-  
 </head>
 <body>
   
@@ -39,8 +27,7 @@
           <!-- Links -->
           <!-- Search form -->
           <form class="form-inline top_Nav search_bar">
-            <input id="searchInput" class="form-control" type="text" placeholder="Search" aria-label="Search">
-            <button id="navSearch" style="height:35px; background-color:orange; color:##7D4900;" saria-label="Search">Search</button>
+            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
           </form>
           <ul class="navbar-nav nav_right">
              <li class="nav-item top_right">
@@ -67,45 +54,32 @@
       </div>
       <!-- Collapsible content -->
   </nav>
-<!--/.Navbar--> 
-  <br>
-  <div id="demo" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ul class="carousel-indicators">
-      <li data-target="#demo" data-slide-to="0" class="active"></li>
-      <li data-target="#demo" data-slide-to="1"></li>
-      <li data-target="#demo" data-slide-to="2"></li>
-      <li data-target="#demo" data-slide-to="3"></li>
-      <li data-target="#demo" data-slide-to="4"></li>
-    </ul>
-    
-    <!-- The slideshow -->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="../img/assets/veg1.jpg" alt="Los Angeles" width="1100" height="500">
-      </div>
-      <div class="carousel-item">
-        <img src="../img/assets/veg2.jpg" alt="Chicago" width="1100" height="500">
-      </div>
-      <div class="carousel-item">
-        <img src="../img/assets/veg3.jpg" alt="New York" width="1100" height="500">
-      </div>
-      <div class="carousel-item">
-        <img src="../img/assets/veg4.jpg" alt="New York" width="1100" height="500">
-      </div>
-      <div class="carousel-item">
-        <img src="../img/assets/veg5.jpg" alt="New York" width="1100" height="500">
-      </div>
+<!-- Header -->
+<header class="header" style="max-width:1600px;min-width:500px" id="header">
+</header>
+
+<!-- Page content -->
+<div class = "container">
+      <h1 class="aboutSpicy">Spicy Basket</h1>
+      <h5 class="tradition">Tradition since 2019</h5>
+      <p>The Spicy Basket was founded by Mr. Jacob, Mrs. Shwetha, Mr. Sal and Mr. Abel in the BIT 230 in April 2019.
+      Spicy Basket is committed to selling only local grown vegetables and fruits.  
+      In its opening month, Spicy basket has sold more than a million items. 
+      Spicy basket has also help local farmers to sell their products for a very reasonable price.
+      In addition, Spicy basket donates about $3000 worth of vegetables and fruits to the Monterey Unified School District each week.
+      New the her nor case that lady paid read. Invitation friendship travelling eat everything the out two. Shy you who scarcely expenses debating hastened resolved. Always polite moment on is warmth spirit it to hearts. Downs those still witty an balls so chief so. Moment an little remain no up lively no. Way brought may off our regular country towards adapted cheered. 
+      Barton did feebly change man she afford square add. Want eyes by neat so just must. Past draw tall up face show rent oh mr. Required is debating extended wondered as do. New get described applauded incommode shameless out extremity but. Resembled at perpetual no believing is otherwise sportsman. Is do he dispatched cultivated travelling astonished. Melancholy am considered possession on collecting everything. 
+
+      </p>
     </div>
-    
-    <!-- Left and right controls -->
-    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#demo" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
+  
+  <hr>
+  </br></br>
+  <div class = "footer" id = "footer">
+          <footer>
+            <p>We care about you. Do not hesitate to contact us.</p>
+            <p><h3>Contact us: </h3> @ 831-000-11111 or by email:    spicy@basket.com</p>
+        </footer>
   </div>
 </body>
 </html>
-
