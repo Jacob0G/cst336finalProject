@@ -8,6 +8,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <link href="../css/styles.css" rel="stylesheet" type="text/css" />
+  
+  <script>
+     $(document).ready(function(){  
+
+        $("#navSearch").on("click", function(){
+          alert($("#searchInput").val());
+        });
+        
+        
+     });
+  </script>
+  
 </head>
 <body>
   
@@ -27,7 +39,8 @@
           <!-- Links -->
           <!-- Search form -->
           <form class="form-inline top_Nav search_bar">
-            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+            <input id="searchInput" class="form-control" type="text" placeholder="Search" aria-label="Search">
+            <button id="navSearch" style="height:35px; background-color:orange; color:##7D4900;" saria-label="Search">Search</button>
           </form>
           <ul class="navbar-nav nav_right">
              <li class="nav-item top_right">
