@@ -45,7 +45,7 @@
                 <a class="nav-link" href="cart.php"><img src="../img/nav_bar/cart.png" alt="Cart"><br>cart</a>
              </li>
              <li class="nav-item">
-                <a class="nav-link" href="login.php"><img src="../img/nav_bar/account.png" alt="Account"><br>login</a>
+                <a class="nav-link" href="login.php"><img src="../img/nav_bar/account.png" alt="Account"><br>Account</a>
              </li>
           </ul>
         </div>
@@ -66,27 +66,8 @@
       <!-- Collapsible content -->
   </nav>
 <!--/.Navbar--> 
-<!-- Header -->
-<header class="header" style="max-width:1600px;min-width:500px" id="header">
-</header>
-
-<!-- Page content -->
-<div class = "container">
-      <h1 class="aboutSpicy">Spicy Basket</h1>
-      <h5 class="tradition">Tradition since 2019</h5>
-      <p>The Spicy Basket was founded by Mr. Jacob, Mrs. Shwetha, Mr. Sal and Mr. Abel in the BIT 230 in April 2019.
-      Spicy Basket is committed to selling only local grown vegetables and fruits.  
-      In its opening month, Spicy basket has sold more than a million items. 
-      Spicy basket has also help local farmers to sell their products for a very reasonable price.
-      In addition, Spicy basket donates about $3000 worth of vegetables and fruits to the Monterey Unified School District each week.
-      New the her nor case that lady paid read. Invitation friendship travelling eat everything the out two. Shy you who scarcely expenses debating hastened resolved. Always polite moment on is warmth spirit it to hearts. Downs those still witty an balls so chief so. Moment an little remain no up lively no. Way brought may off our regular country towards adapted cheered. 
-      Barton did feebly change man she afford square add. Want eyes by neat so just must. Past draw tall up face show rent oh mr. Required is debating extended wondered as do. New get described applauded incommode shameless out extremity but. Resembled at perpetual no believing is otherwise sportsman. Is do he dispatched cultivated travelling astonished. Melancholy am considered possession on collecting everything. 
-
-      </p>
-    </div>
-  
-  <hr>
-  </br></br>
+ 
+ 
   <div class = "footer" id = "footer">
           <footer>
             <p>We care about you. Do not hesitate to contact us.</p>

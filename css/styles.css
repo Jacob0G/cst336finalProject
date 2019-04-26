@@ -1,9 +1,10 @@
 body{
     text-align:center;
+    background-color:#F2E7CB !important;
 }
 .top{
     color:orange;
-    background-color:white;
+    background-color:#F2E7CB !important;
     margin: 0px;
     padding: 0px;
 }
@@ -42,7 +43,7 @@ body{
 
 /* Create Page */
 
-* {box-sizing: border-box}
+/** {box-sizing: border-box}*/
 
 /* Full-width input fields */
   input[type=text], input[type=password] {
@@ -120,7 +121,7 @@ button:hover {
    text-align: left;
    background-color: orange;
    margin-left: 400px;
-    margin-top: 50px;
+   margin-top: 50px;
    color:white;
 }
 
