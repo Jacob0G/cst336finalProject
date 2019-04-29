@@ -1,27 +1,206 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <link href="../css/styles.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-  
-  <!--NavBar top-->
-      <script>
-     $(document).ready(function(){  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link href="../css/styles.css" rel="stylesheet" type="text/css" />
+<style>
+    .img 
+    {
+    text-align: justify;
+    position: relative;
+    float: left;
+    width:  150px;
+    height: 150px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+    }
+    .row{
+        text-align:center;
+        justify-content:center;
+        display:inline-block;
+        padding-top:25px;
+        padding-bottom:25px;
+    }
+    .col{
+        margin:10px;
+        padding-left:25px !important;
+        padding-right:25px!important;
+        /*padding:25px!important;*/
+        /*padding-right: 30px !important;*/
+    }
+    .text{
+        text-align:center;
+        display: block;
+        height: 70px;    
+        margin: 0 auto;
+    }
+    button{
+        width: 10%;
+    }
+    .active-filter{
+        background-color:red;
+    }
+</style>
+<script>
+    function addCart(){
+        alert("hello");
+    }
+    
+    $(document).ready(function(){
+    function showAll(){
+        var eK = [];
+        eK.push(document.getElementsByClassName('1'));
+        eK.push(document.getElementsByClassName('2'));
+        eK.push(document.getElementsByClassName('3'));
+        eK.push(document.getElementsByClassName('4'));
+        for(let k = 0; k < eK.length;k++){
+            for(let i = 0; i < eK[k].length;i++){
+                eK[k][i].style.display='block';
+            }
+        } 
+    }
+    function showClass(j){
+        var e = [];
+        var e = document.getElementsByClassName(j);
+        switch(+j){
+                case 0:
+                    showAll();
+                    break;
+                case 1:
+                    showAll();
+                    var eR = []; // elements to remove
+                    eR.push(document.getElementsByClassName('2'));
+                    eR.push(document.getElementsByClassName('3'));
+                    eR.push(document.getElementsByClassName('4'));
+                    for(let k = 0; k < eR.length;k++){
+                        for(let i = 0; i < eR[k].length;i++){
+                            eR[k][i].style.display='none';
+                        }
+                    } 
+                    break;
+                case 2:
+                    showAll();
+                    var eR = []; // element to remove
+                    eR.push(document.getElementsByClassName('1'));
+                    eR.push(document.getElementsByClassName('3'));
+                    eR.push(document.getElementsByClassName('4'));
+                    for(let k = 0; k < eR.length;k++){
+                        for(let i = 0; i < eR[k].length;i++){
+                            eR[k][i].style.display='none';
+                        }
+                    } 
+                    break;
+                case 3:
+                    showAll();
+                    var eR = []; // element to remove
+                    eR.push(document.getElementsByClassName('2'));
+                    eR.push(document.getElementsByClassName('1'));
+                    eR.push(document.getElementsByClassName('4'));
+                    for(let k = 0; k < eR.length;k++){
+                        for(let i = 0; i < eR[k].length;i++){
+                            eR[k][i].style.display='none';
+                        }
+                    } 
+                    break;
+                case 4:
+                    showAll();
+                    var eR = []; // element to remove
+                    eR.push(document.getElementsByClassName('2'));
+                    eR.push(document.getElementsByClassName('3'));
+                    eR.push(document.getElementsByClassName('1'));
+                    for(let k = 0; k < eR.length;k++){
+                        for(let i = 0; i < eR[k].length;i++){
+                            eR[k][i].style.display='none';
+                        }
+                    }
+                    break;
+                default:
+                    alert(j);
+                    break;
+        }
+    }
 
+    $(document).on('click', '.historyLink', function(){
+        $('#myModal').modal("show");
+        $("#product").html("");
+        $.ajax({
+            type: "GET",
+            url:  "../api/productAPI/getProductInfo.php",
+            dataType: "json",
+            data: {"product_id" : $(this).attr("id")},
+            
+            success: function(data,status) {
+                $("#product").append(data.product_name+ "<br />");
+                $("#product").append("<img src='" + data.product_img + "' width='200' /> <br />");
+                $("#product").append("Price: $"+data.product_price + "<br />");
+                $("#product").append("Quantity: "+data.product_stock+ "<br />");
+                $("#product").append("Description: "+data.product_description + "<br />");
+                $("#product").append("<input id='modalQty' style='width:20%; margin-top: 22px !important;' type='text' placeholder='Qty'>");
+                $("#product").append("<button style='width:50%;' onclick='addCart()'>add to Cart</button>");
+            },
+            complete: function(data,status) { //optional, used for debugging purposes
+            // alert(status);
+            }
+        });//ajax
+    });//ProductLink
+        
+    $.ajax({
+         method: "GET",
+            url: "../api/productAPI/getProducts.php",
+        dataType: "json",
+        success: function(data, status) {
+            let htmlString = "";
+            let i = 0;
+            $("#products").html();
+            
+            for (let rows=0; rows < 3; rows++) {
+                if(rows < 4){
+                    htmlString += "<div class='row' sytle='margin:auto; justify-content:center;'>";
+                }
+                else{
+                    htmlString += "<div class='row'>";
+                }
+                for (let cols=0; cols < Math.floor(data.length/3); cols++) {
+                    htmlString += "<div class='" + data[i].cat_id +" col'>";
+                    htmlString += "<img id='"+ data[i].product_id +"'class='img historyLink' src='" + data[i].product_img + "'/><br>";
+                    htmlString += "<div class='img text'>";
+                    htmlString += "<a href='#' class='historyLink' id='" + data[i].product_id + "'>" + data[i].product_name + "</a>";
+                    htmlString += "<br>$" +data[i++].product_price+"</div><br>";
+                    htmlString += "</div><br>";
+                }//for
+                htmlString += "<br></div>";
+            }//for
+            htmlString += "</div>";
+           $("#products").append(htmlString);
+            }
+        }); //ajax 
+        
         $("#navSearch").on("click", function(){
           alert($("#searchInput").val());
         });
         
+        $(".btn").each(function(){
+           $(this).click(function(){
+              $(this).addClass("active-filter");
+              $(this).siblings().removeClass("active-filter");
+              showClass($(this).val());
+           });
+        });
         
-     });
-  </script>
+    });//documentReady
+    
+</script>
+</head>
+<body>
+
+ <!--NavBar top-->
  <nav class="navbar navbar-light navbar-expand-md bg-faded justify-content-center align-items-center top">
     <!-- Navbar brand -->
     <div class="top_Nav"style="width=100%">
@@ -66,13 +245,36 @@
       <!-- Collapsible content -->
   </nav>
 <!--/.Navbar--> 
- 
- 
-  <div class = "footer" id = "footer">
-          <footer>
-            <p>We care about you. Do not hesitate to contact us.</p>
-            <p><h3>Contact us: </h3> @ 831-000-11111 or by email:    spicy@basket.com</p>
-        </footer>
-  </div>
+
+<!-- Control buttons -->
+<div class="btn-group" role="group" aria-label="..." style=" justify-content: center; text-align: center; width: 100%;">
+  <button type='button' class="btn btn-default active-filter" value='0'> Show all</button>
+  <button type='button' class="btn btn-default" value='1'> Vegtables</button>
+  <button type='button' class="btn btn-default" value='2'> Fruits</button>
+  <button type='button' class="btn btn-default" value='4'> Herbs & Spices</button>
+  <button type='button' class="btn btn-default" value='3'> Misc Items</button>
+</div>
+<div class='container' id="products" style=" margin: auto; text-align:center;"></div>
+
+<div class="modal" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Product</h5>
+            </div>
+            <div class="modal-body">
+                <div id="product"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" style="width:100%;" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+</div>
+<div class = "footer" id = "footer">
+      <footer>
+        <p>We care about you. Do not hesitate to contact us.</p>
+        <p><h3>Contact us: </h3> @ 831-000-11111 or by email:    spicy@basket.com</p>
+    </footer>
 </body>
 </html>
