@@ -11,7 +11,17 @@
 </head>
 <body>
   
-  <!--NavBar top-->
+<!--NavBar top-->
+    <script>
+     $(document).ready(function(){  
+
+        $("#navSearch").on("click", function(){
+          alert($("#searchInput").val());
+        });
+        
+        
+     });
+  </script>
  <nav class="navbar navbar-light navbar-expand-md bg-faded justify-content-center align-items-center top">
     <!-- Navbar brand -->
     <div class="top_Nav"style="width=100%">
@@ -22,38 +32,40 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent" style='margin-right: 10px !important;'>
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
-            <li> <a class="navbar-brand" href="#"><img src="../img/nav_bar/Logo.png" alt="Logo"></a></li>
+            <li> <a class="navbar-brand" href="index.php"><img src="../img/nav_bar/Logo.png" alt="Logo"></a></li>
           </ul>
           <!-- Links -->
           <!-- Search form -->
           <form class="form-inline top_Nav search_bar">
-            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+            <input id="searchInput" class="form-control" style="margin-top: 22px !important;" type="text" placeholder="Search" aria-label="Search">
+            <button id="navSearch" style="width: 140px !important;" saria-label="Search">Search</button>
           </form>
           <ul class="navbar-nav nav_right">
              <li class="nav-item top_right">
-                <a class="nav-link" href="#"><img src="../img/nav_bar/cart.png" alt="Cart"><br>cart</a>
+                <a class="nav-link" href="cart.php"><img src="../img/nav_bar/cart.png" alt="Cart"><br>cart</a>
              </li>
              <li class="nav-item">
-                <a class="nav-link" href="#"><img src="../img/nav_bar/account.png" alt="Account"><br>login</a>
+                <a class="nav-link" href="login.php"><img src="../img/nav_bar/account.png" alt="Account"><br>Account</a>
              </li>
           </ul>
         </div>
             <div class="navbar-collapse collapse w-100 ml-auto d-flex align-items-center bottom"style='padding: 15px;' id="collapsingNavbar3">
               <ul class="navbar-nav w-100 justify-content-center">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Products</a>
+                    <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Categories</a>
+                    <a class="nav-link" href="products.php">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="about.php">About Us</a>
                 </li>
             </ul>
           </div>
       </div>
       <!-- Collapsible content -->
   </nav>
+<!--/.Navbar--> 
  
   <div class="container">
     <h1>Sign Up</h1>
@@ -86,7 +98,10 @@
     <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
     <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
+      <form action="login.php">
+         <button type="submit" class="cancelbtn">Cancel</button>
+      </form>
+      <!--<button type="button" class="cancelbtn"></button>-->
       <button type="submit" class="signupbtn">Sign Up</button>
     </div>
   </div>

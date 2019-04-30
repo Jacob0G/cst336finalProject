@@ -9,6 +9,7 @@ $conn = getDatabaseConnection("finalProject");
 
 $username = $_POST['username'];
 $password = sha1($_POST['password']);
+
 $sql = "SELECT * FROM fp_admins WHERE username = :username AND password = :password";
 
 $namedParameters = array();
@@ -27,7 +28,6 @@ $record = $stmt->fetch(PDO::FETCH_ASSOC); //we are expecting ONLY one record, so
     header('location: ../src/admin.php'); //redirecting to a new file
     
 } 
-
 else{
 
 header('location: ../src/adminLogin.php?LoginError=True');
