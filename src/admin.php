@@ -3,7 +3,7 @@
     <head>
         <title> Ottermart - Admin Section </title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        
+
         <script>
         
             function confirmDelete(){
@@ -18,34 +18,27 @@
             
             $(document).ready(function(){
                 
-                //Gets first 10 products from the database and displays them
-                $.ajax({
+                 $.ajax({
+                 method: "GET",
+                    url: "../api/productAPI/getProducts.php",
+                dataType: "json",
+                success: function(data, status) {
 
-                    type: "GET",
-                    url: "api/getProducts.php",
-                    dataType: "json",
-                    success: function(data,status) {
-                      //alert(data[0].productName);
-                      data.forEach(function(product){
-                          $("#products").append("<div class='row'>" + 
-                                                "<div class='col1'>" + 
-                                                "<a class=\"btn btn-primary\"  href='update.php?productId="+product.productId+"'> Update </a>" +
-                                                //"[<a href='delete.php?productId="+product.productId+"'> Delete </a>]" +
-                                                "<form action='delete.php' method='post' onsubmit='return confirmDelete()'>"+
-                                                "<input type='hidden' name='productId' value='"+ product.productId + "'>" +
-                                                "<button class=\"btn btn-outline-danger\">Delete</button></form>" +
-                                                "<a target='productIframe' onclick='openModal()' href='productInfo.php?productId="+product.productId+"'> " + product.productName + "</a></div>"+
-                                                "<div class='col2'>"+"$" + product.productPrice + "</div>"+
-                                                "</div><br>");
-                      })
-                    },
-                    complete: function(data,status) { //optional, used for debugging purposes
-                    //alert(status);
-                    }
-                    
-                });//ajax
-                
-               
+              data.forEach(function(product){
+                  $("#products").append("<div class='row'>" + 
+                                        "<div class='col1'>" + 
+                                        "<a class=\"btn btn-primary\"  href='update.php?product_id="+product.product_id+"'> Update </a>" +
+                                        //"[<a href='delete.php?productId="+product.productId+"'> Delete </a>]" +
+                                        "<form action='delete.php' method='post' onsubmit='return confirmDelete()'>"+
+                                        "<input type='hidden' name='product_id' value='"+ product.product_id + "'>" +
+                                        "<button class=\"btn btn-outline-danger\">Delete</button></form>" +
+                                        "<a target='productIframe' onclick='openModal()' href='productInfo.php?product_id="+product.product_id+"'> " + product.product_name + "</a></div>"+
+                                        "<div class='col2'>"+"$" + product.product_price + "</div>"+
+                                        "</div><br>");
+              })
+
+                }
+                }); //ajax 
                 
             });//documentReady
             
@@ -57,7 +50,7 @@
         
             .row  { display:flex; }
         
-            .col1 { width:350px; }
+            .col1 { width:400px; }
             
             form { display: inline-block; }
             
@@ -91,10 +84,6 @@
      <div id="products"></div>
      
      
-   <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-  Launch demo modal
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">

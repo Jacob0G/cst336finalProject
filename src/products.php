@@ -50,7 +50,7 @@
 </style>
 <script>
     function addCart(){
-        alert("hello");
+        alert($("#modalQty").val());
     }
     
     $(document).ready(function(){
