@@ -7,14 +7,34 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link href="../css/styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
   
 <!--NavBar top-->
     <script>
+      function checkSession(){
+        $.ajax(
+        {
+            method: "GET",
+            url: "../api/checkSession.php",
+            dataType: "json",
+            success: function(data, status) 
+            {
+                if(data == "user"){
+                    $("#cart").attr("href",'cart.php');
+                    $("#account").attr("href",'account.php');
+                }
+                if(data == "login"){
+                    $("#cart").attr("href",'login.php');
+                    $("#account").attr("href",'login.php');
+                }
+            }
+        }); //ajax 
+      }
      $(document).ready(function(){  
-
+        checkSession();
         $("#navSearch").on("click", function(){
           alert($("#searchInput").val());
         });
@@ -42,10 +62,10 @@
           </form>
           <ul class="navbar-nav nav_right">
              <li class="nav-item top_right">
-                <a class="nav-link" href="cart.php"><img src="../img/nav_bar/cart.png" alt="Cart"><br>cart</a>
+                <a id="cart" class="nav-link" href="cart.php"><img src="../img/nav_bar/cart.png" alt="Cart"><br>cart</a>
              </li>
              <li class="nav-item">
-                <a class="nav-link" href="login.php"><img src="../img/nav_bar/account.png" alt="Account"><br>Account</a>
+                <a id="account" class="nav-link" href="login.php"><img src="../img/nav_bar/account.png" alt="Account"><br>Account</a>
              </li>
           </ul>
         </div>

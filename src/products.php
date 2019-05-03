@@ -171,6 +171,7 @@ function addCart(){
     }); //ajax 
 }
 $(document).on('click', '.historyLink', function(){
+    
     $('#myModal').modal("show");
     $("#product").html("");
     $.ajax({
