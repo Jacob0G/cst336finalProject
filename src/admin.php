@@ -29,7 +29,7 @@
                                         "<div class='col1'>" + 
                                         "<a class=\"btn btn-primary\"  href='update.php?product_id="+product.product_id+"'> Update </a>" +
                                         //"[<a href='delete.php?productId="+product.productId+"'> Delete </a>]" +
-                                        "<form action='delete.php' method='post' onsubmit='return confirmDelete()'>"+
+                                        "<form action='../api/productAPI/deleteProduct.php' method='post' onsubmit='return confirmDelete()'>"+
                                         "<input type='hidden' name='product_id' value='"+ product.product_id + "'>" +
                                         "<button class=\"btn btn-outline-danger\">Delete</button></form>" +
                                         "<a target='productIframe' onclick='openModal()' href='productInfo.php?product_id="+product.product_id+"'> " + product.product_name + "</a></div>"+
@@ -75,7 +75,7 @@
         <button>Add New Product</button>
     </form>
     
-    <form action="logout.php">
+    <form action="../api/logout.php">
         <button>Logout</button>
     </form>
     

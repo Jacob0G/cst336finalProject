@@ -82,7 +82,7 @@
         <!--/.Navbar--> 
 
         <div>
-        <form method="POST" action="loginProcess.php">
+        <form method="POST" action="../api/loginProcess.php">
             
             Username: <input type="text" name="username" id="username"style="width:20%;!important"/> <br/>
             

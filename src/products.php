@@ -10,28 +10,41 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <link href="../css/styles.css" rel="stylesheet" type="text/css" />
 <style>
+    * {
+      -webkit-box-sizing: content-box;
+         -moz-box-sizing: content-box;
+              box-sizing: content-box;
+    }
+    *:before,
+    *:after {
+      -webkit-box-sizing: content-box;
+         -moz-box-sizing: content-box;
+              box-sizing: content-box;
+    }
     .img 
     {
-    text-align: justify;
-    position: relative;
+    margin:0px;
+    padding:0px;
     float: left;
     width:  150px;
     height: 150px;
-    background-position: 50% 50%;
+    background-position: 0% 0%;
     background-repeat:   no-repeat;
     background-size:     cover;
     }
     .row{
+        margin:10px;
+        padding:auto;
         text-align:center;
         justify-content:center;
         display:inline-block;
-        padding-top:25px;
-        padding-bottom:25px;
+        border: solid red;
     }
     .col{
-        margin:10px;
-        padding-left:25px !important;
-        padding-right:25px!important;
+        margin:0px;
+        border: solid green;
+        width:  150px;
+        height: 200px;
         /*padding:25px!important;*/
         /*padding-right: 30px !important;*/
     }
@@ -49,108 +62,144 @@
     }
 </style>
 <script>
-    function addCart(){
-        alert($("#modalQty").val());
-    }
-    
-    $(document).ready(function(){
-    function showAll(){
-        var eK = [];
-        eK.push(document.getElementsByClassName('1'));
-        eK.push(document.getElementsByClassName('2'));
-        eK.push(document.getElementsByClassName('3'));
-        eK.push(document.getElementsByClassName('4'));
-        for(let k = 0; k < eK.length;k++){
-            for(let i = 0; i < eK[k].length;i++){
-                eK[k][i].style.display='block';
-            }
-        } 
-    }
-    function showClass(j){
-        var e = [];
-        var e = document.getElementsByClassName(j);
-        switch(+j){
-                case 0:
-                    showAll();
-                    break;
-                case 1:
-                    showAll();
-                    var eR = []; // elements to remove
-                    eR.push(document.getElementsByClassName('2'));
-                    eR.push(document.getElementsByClassName('3'));
-                    eR.push(document.getElementsByClassName('4'));
-                    for(let k = 0; k < eR.length;k++){
-                        for(let i = 0; i < eR[k].length;i++){
-                            eR[k][i].style.display='none';
-                        }
-                    } 
-                    break;
-                case 2:
-                    showAll();
-                    var eR = []; // element to remove
-                    eR.push(document.getElementsByClassName('1'));
-                    eR.push(document.getElementsByClassName('3'));
-                    eR.push(document.getElementsByClassName('4'));
-                    for(let k = 0; k < eR.length;k++){
-                        for(let i = 0; i < eR[k].length;i++){
-                            eR[k][i].style.display='none';
-                        }
-                    } 
-                    break;
-                case 3:
-                    showAll();
-                    var eR = []; // element to remove
-                    eR.push(document.getElementsByClassName('2'));
-                    eR.push(document.getElementsByClassName('1'));
-                    eR.push(document.getElementsByClassName('4'));
-                    for(let k = 0; k < eR.length;k++){
-                        for(let i = 0; i < eR[k].length;i++){
-                            eR[k][i].style.display='none';
-                        }
-                    } 
-                    break;
-                case 4:
-                    showAll();
-                    var eR = []; // element to remove
-                    eR.push(document.getElementsByClassName('2'));
-                    eR.push(document.getElementsByClassName('3'));
-                    eR.push(document.getElementsByClassName('1'));
-                    for(let k = 0; k < eR.length;k++){
-                        for(let i = 0; i < eR[k].length;i++){
-                            eR[k][i].style.display='none';
-                        }
-                    }
-                    break;
-                default:
-                    alert(j);
-                    break;
+function showAll(){
+    var eK = [];
+    eK.push(document.getElementsByClassName('1'));
+    eK.push(document.getElementsByClassName('2'));
+    eK.push(document.getElementsByClassName('3'));
+    eK.push(document.getElementsByClassName('4'));
+    for(let k = 0; k < eK.length;k++){
+        for(let i = 0; i < eK[k].length;i++){
+            eK[k][i].style.display='block';
         }
-    }
-
-    $(document).on('click', '.historyLink', function(){
-        $('#myModal').modal("show");
-        $("#product").html("");
-        $.ajax({
-            type: "GET",
-            url:  "../api/productAPI/getProductInfo.php",
-            dataType: "json",
-            data: {"product_id" : $(this).attr("id")},
-            
-            success: function(data,status) {
-                $("#product").append(data.product_name+ "<br />");
-                $("#product").append("<img src='" + data.product_img + "' width='200' /> <br />");
-                $("#product").append("Price: $"+data.product_price + "<br />");
-                $("#product").append("Quantity: "+data.product_stock+ "<br />");
-                $("#product").append("Description: "+data.product_description + "<br />");
-                $("#product").append("<input id='modalQty' style='width:20%; margin-top: 22px !important;' type='text' placeholder='Qty'>");
-                $("#product").append("<button style='width:50%;' onclick='addCart()'>add to Cart</button>");
-            },
-            complete: function(data,status) { //optional, used for debugging purposes
-            // alert(status);
+    } 
+}
+function showClass(j){
+    var e = [];
+    var e = document.getElementsByClassName(j);
+    switch(+j){
+        case 0:
+            showAll();
+            break;
+        case 1:
+            showAll();
+            var eR = []; // elements to remove
+            eR.push(document.getElementsByClassName('2'));
+            eR.push(document.getElementsByClassName('3'));
+            eR.push(document.getElementsByClassName('4'));
+            for(let k = 0; k < eR.length;k++){
+                for(let i = 0; i < eR[k].length;i++){
+                    eR[k][i].style.display='none';
+                }
+            } 
+            break;
+        case 2:
+            showAll();
+            var eR = []; // element to remove
+            eR.push(document.getElementsByClassName('1'));
+            eR.push(document.getElementsByClassName('3'));
+            eR.push(document.getElementsByClassName('4'));
+            for(let k = 0; k < eR.length;k++){
+                for(let i = 0; i < eR[k].length;i++){
+                    eR[k][i].style.display='none';
+                }
+            } 
+            break;
+        case 3:
+            showAll();
+            var eR = []; // element to remove
+            eR.push(document.getElementsByClassName('2'));
+            eR.push(document.getElementsByClassName('1'));
+            eR.push(document.getElementsByClassName('4'));
+            for(let k = 0; k < eR.length;k++){
+                for(let i = 0; i < eR[k].length;i++){
+                    eR[k][i].style.display='none';
+                }
+            } 
+            break;
+        case 4:
+            showAll();
+            var eR = []; // element to remove
+            eR.push(document.getElementsByClassName('2'));
+            eR.push(document.getElementsByClassName('3'));
+            eR.push(document.getElementsByClassName('1'));
+            for(let k = 0; k < eR.length;k++){
+                for(let i = 0; i < eR[k].length;i++){
+                    eR[k][i].style.display='none';
+                }
             }
-        });//ajax
-    });//ProductLink
+            break;
+        default:
+            alert(j);
+            break;
+    }
+}
+function checkSession(){
+    $.ajax(
+    {
+        method: "GET",
+        url: "../api/checkSession.php",
+        dataType: "json",
+        success: function(data, status) 
+        {
+            if(data == "user"){
+                $("#cart").attr("href",'cart.php');
+                $("#account").attr("href",'account.php');
+            }
+            if(data == "login"){
+                $("#cart").attr("href",'login.php');
+                $("#account").attr("href",'login.php');
+            }
+        }
+    }); //ajax 
+}
+function addCart(){
+     $.ajax(
+    {
+        method: "GET",
+        url: "../api/checkSession.php",
+        dataType: "json",
+        success: function(data, status) 
+        {
+            if(data == "user"){
+                alert($("#modalQty").val());
+            }
+            if(data == "login"){
+                alert("please login");
+            }
+        }
+    }); //ajax 
+}
+$(document).on('click', '.historyLink', function(){
+    $('#myModal').modal("show");
+    $("#product").html("");
+    $.ajax({
+        type: "GET",
+        url:  "../api/productAPI/getProductInfo.php",
+        dataType: "json",
+        data: {"product_id" : $(this).attr("id")},
         
+        success: function(data,status) {
+            $("#product").append(data.product_name+ "<br />");
+            $("#product").append("<img src='" + data.product_img + "' width='200' /> <br />");
+            $("#product").append("Price: $"+data.product_price + "<br />");
+            $("#product").append("Quantity: "+data.product_stock+ "<br />");
+            $("#product").append("Description: "+data.product_description + "<br />");
+            $("#product").append("<input id='modalQty' value='1' style='width:20%; margin-top: 22px !important;' type='text' placeholder='Qty'>");
+            $("#product").append("<button id='cartBtn' style='width:50%;' onclick='addCart()'>add to Cart</button>");
+        },
+        complete: function(data,status) { //optional, used for debugging purposes
+        // alert(status);
+        }
+    });//ajax
+});//ProductLink
+
+$("#navSearch").on("click", function(){
+    alert($("#searchInput").val());
+});
+
+$(document).ready(function(){
+    checkSession();
     $.ajax({
          method: "GET",
             url: "../api/productAPI/getProducts.php",
@@ -180,22 +229,15 @@
             htmlString += "</div>";
            $("#products").append(htmlString);
             }
-        }); //ajax 
-        
-        $("#navSearch").on("click", function(){
-          alert($("#searchInput").val());
-        });
-        
-        $(".btn").each(function(){
-           $(this).click(function(){
-              $(this).addClass("active-filter");
-              $(this).siblings().removeClass("active-filter");
-              showClass($(this).val());
-           });
-        });
-        
-    });//documentReady
-    
+    }); //ajax 
+    $(".btn").each(function(){
+   $(this).click(function(){
+      $(this).addClass("active-filter");
+      $(this).siblings().removeClass("active-filter");
+      showClass($(this).val());
+   });
+});
+});//documentReady
 </script>
 </head>
 <body>
@@ -221,10 +263,10 @@
           </form>
           <ul class="navbar-nav nav_right">
              <li class="nav-item top_right">
-                <a class="nav-link" href="cart.php"><img src="../img/nav_bar/cart.png" alt="Cart"><br>cart</a>
+                <a id="cart" class="nav-link" href="login.php"><img src="../img/nav_bar/cart.png" alt="Cart"><br>cart</a>
              </li>
              <li class="nav-item">
-                <a class="nav-link" href="login.php"><img src="../img/nav_bar/account.png" alt="Account"><br>Account</a>
+                <a id="account" class="nav-link" href="login.php"><img src="../img/nav_bar/account.png" alt="Account"><br>Account</a>
              </li>
           </ul>
         </div>
