@@ -38,11 +38,11 @@
         text-align:center;
         justify-content:center;
         display:inline-block;
-        border: solid red;
+        /*border: solid red;*/
     }
     .col{
         margin:0px;
-        border: solid green;
+        /*border: solid green;*/
         width:  150px;
         height: 200px;
         /*padding:25px!important;*/
