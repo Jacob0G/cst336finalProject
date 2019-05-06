@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Ottermart - Admin Section </title>
+        <title> Spice Basket - Admin Section </title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
         <script>
@@ -40,8 +40,44 @@
                 }
                 }); //ajax 
                 
+                
+                $("#numProduct").on("click", function(){
+                    $.ajax({
+                        method: "GET",
+                        url: "../api/adminAPI/getReportsAPI.php",
+                        dataType: "json",
+                        data: {'report_type': $("#numProduct").val()},
+                        success: function(data, status) {
+                            alert(data['count(*)']);
+                        }
+                    });//ajax
+                });
+                
+                $("#avgPrice").on("click", function(){
+                    $.ajax({
+                        method: "GET",
+                        url: "../api/adminAPI/getReportsAPI.php",
+                        dataType: "json",
+                        data: {'report_type': $("#avgPrice").val()},
+                        success: function(data, status) {
+                            alert(data['avg(product_price)']);
+                        }
+                    });//ajax
+                });
+                $("#totalStock").on("click", function(){
+                    $.ajax({
+                        method: "GET",
+                        url: "../api/adminAPI/getReportsAPI.php",
+                        dataType: "json",
+                        data: {'report_type': $("#totalStock").val()},
+                        success: function(data, status) {
+                            alert(data['sum(product_stock)'])
+                        }
+                    });//ajax                
+                });
+                
             });//documentReady
-            
+
         </script>
         
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -78,6 +114,9 @@
     <form action="../api/logout.php">
         <button>Logout</button>
     </form>
+    <button id="numProduct" value='1'>Number of products</button>
+    <button id="avgPrice" value='2'>Average Product price</button>
+    <button id="totalStock"value='3'>Total stock</button>
     
     <br><br>
     

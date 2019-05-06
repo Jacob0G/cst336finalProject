@@ -157,16 +157,27 @@ function addCart(){
      $.ajax(
     {
         method: "GET",
-        url: "../api/checkSession.php",
+        url: "../api/userAPI/checkSession.php",
         dataType: "json",
         success: function(data, status) 
         {
-            if(data == "user"){
-                alert($("#modalQty").val());
-            }
-            if(data == "login"){
-                alert("please login");
-            }
+            user = data.split(" ")[0];
+            alert(user);
+            // add product_id
+            // add product_price
+            // add product_quantity
+            
+            // $.ajax(
+            // {
+            //     method: "GET",
+            //     url: "../api/cartAPI/addCart.php",
+            //     dataType: "json",
+            //     data: {'username': username},
+            //     success: function(data, status) 
+            //     {
+                    
+            //     }
+            // }); //ajax 
         }
     }); //ajax 
 }

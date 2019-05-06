@@ -5,11 +5,11 @@
     
     $arr = array();
 
-    $arr[":productId"] = $_GET['productId'];
+    $arr[":productId"] = $_GET['product_id'];
     $arr[":quantity"] = $_GET['quantity'];
-    $arr[":unitPrice"] = $_GET['unitPrice'];
+    $arr[":unitPrice"] = $_GET['unit_price'];
     $arr[":username"] = $_GET['username'];  
-   
+    
    //$sql = "INSERT INTO `fp_carts` (`cart_id`, `product_id`, `quantity`, `unitPrice`) 
          // VALUES (NULL, :productId, :quantity, :unitPrice)"; 
 

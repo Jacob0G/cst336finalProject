@@ -1,9 +1,7 @@
 <?php
 
-
     include '../../inc/dbConnection.php';
     $conn = getDatabaseConnection("finalProject");
-    
     
     $arr[":productId"]= $_GET['productId'];
     
@@ -32,7 +30,4 @@
     $stmt->execute($arr); 
         
 
-
-
-    
 ?>

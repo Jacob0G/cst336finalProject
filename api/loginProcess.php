@@ -28,8 +28,7 @@ $record = $stmt->fetch(PDO::FETCH_ASSOC); //we are expecting ONLY one record, so
 else{
  
  $sql = "SELECT * FROM fp_users WHERE username = :username AND password = :password";
- $password = $_POST['password'];
- $namedParameters[':password'] = $password;
+ $namedParameters[':password'] = $_POST['password'];
  $stmt = $conn->prepare($sql);
  $stmt->execute($namedParameters);
  $userRecord= $stmt->fetch(PDO::FETCH_ASSOC); //we are expecting ONLY one record, so we use fetch instead of fetchAll

@@ -37,7 +37,7 @@
     
        <button id="past">Past Purchases<br></button>
        
-     <form action="../api/cart.php">
+     <form action="../src/cart.php">
         <button>Cart</button>
      </form>
        
