@@ -165,7 +165,7 @@ function addCart(){
             
             $.ajax(
             {
-                method: "GET",
+                method: "POST",
                 url: "../api/cartAPI/addCart.php",
                 dataType: "json",
                 data: {'username': user,

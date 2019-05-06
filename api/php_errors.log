@@ -234,3 +234,30 @@ Stack trace:
 [06-May-2019 21:33:37 UTC] PHP Parse error:  syntax error, unexpected '$stmt' (T_VARIABLE) in /home/ubuntu/workspace/cst336finalProject/api/cartAPI/addCart.php on line 23
 [06-May-2019 21:35:21 UTC] PHP Parse error:  syntax error, unexpected '$stmt' (T_VARIABLE) in /home/ubuntu/workspace/cst336finalProject/api/cartAPI/addCart.php on line 23
 [06-May-2019 21:35:48 UTC] PHP Parse error:  syntax error, unexpected '$stmt' (T_VARIABLE) in /home/ubuntu/workspace/cst336finalProject/api/cartAPI/addCart.php on line 23
+[06-May-2019 21:46:32 UTC] PHP Warning:  include(../inc/dbConnection.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336finalProject/api/userAPI/userInfo.php on line 2
+[06-May-2019 21:46:32 UTC] PHP Stack trace:
+[06-May-2019 21:46:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/userAPI/userInfo.php:0
+[06-May-2019 21:46:32 UTC] PHP Warning:  include(): Failed opening '../inc/dbConnection.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336finalProject/api/userAPI/userInfo.php on line 2
+[06-May-2019 21:46:32 UTC] PHP Stack trace:
+[06-May-2019 21:46:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/userAPI/userInfo.php:0
+[06-May-2019 21:46:32 UTC] PHP Fatal error:  Call to undefined function getDatabaseConnection() in /home/ubuntu/workspace/cst336finalProject/api/userAPI/userInfo.php on line 3
+[06-May-2019 21:46:32 UTC] PHP Stack trace:
+[06-May-2019 21:46:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/userAPI/userInfo.php:0
+[06-May-2019 21:46:52 UTC] PHP Warning:  include(../inc/dbConnection.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336finalProject/api/userAPI/userInfo.php on line 2
+[06-May-2019 21:46:52 UTC] PHP Stack trace:
+[06-May-2019 21:46:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/userAPI/userInfo.php:0
+[06-May-2019 21:46:52 UTC] PHP Warning:  include(): Failed opening '../inc/dbConnection.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336finalProject/api/userAPI/userInfo.php on line 2
+[06-May-2019 21:46:52 UTC] PHP Stack trace:
+[06-May-2019 21:46:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/userAPI/userInfo.php:0
+[06-May-2019 21:46:52 UTC] PHP Fatal error:  Call to undefined function getDatabaseConnection() in /home/ubuntu/workspace/cst336finalProject/api/userAPI/userInfo.php on line 3
+[06-May-2019 21:46:52 UTC] PHP Stack trace:
+[06-May-2019 21:46:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/userAPI/userInfo.php:0
+[06-May-2019 21:46:54 UTC] PHP Warning:  include(../inc/dbConnection.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/cst336finalProject/api/userAPI/userInfo.php on line 2
+[06-May-2019 21:46:54 UTC] PHP Stack trace:
+[06-May-2019 21:46:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/userAPI/userInfo.php:0
+[06-May-2019 21:46:54 UTC] PHP Warning:  include(): Failed opening '../inc/dbConnection.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/cst336finalProject/api/userAPI/userInfo.php on line 2
+[06-May-2019 21:46:54 UTC] PHP Stack trace:
+[06-May-2019 21:46:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/userAPI/userInfo.php:0
+[06-May-2019 21:46:54 UTC] PHP Fatal error:  Call to undefined function getDatabaseConnection() in /home/ubuntu/workspace/cst336finalProject/api/userAPI/userInfo.php on line 3
+[06-May-2019 21:46:54 UTC] PHP Stack trace:
+[06-May-2019 21:46:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336finalProject/api/userAPI/userInfo.php:0

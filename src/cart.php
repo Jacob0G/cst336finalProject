@@ -40,11 +40,11 @@
             width:40%;
             margin:0px !important;
             float: left;
-            border: solid green;
+            /*border: solid green;*/
         }
         #product_qty{
             margin:0px !important;
-            border: solid red;
+            /*border: solid red;*/
         }
         #inputQty{
             margin:10px;

@@ -41,7 +41,7 @@
         <button>Cart</button>
      </form>
        
-    <form action="../src/index.php">
+    <form action="../api/logout.php">
         <button>Logout</button>
     </form>
     
