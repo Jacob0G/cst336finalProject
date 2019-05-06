@@ -162,22 +162,22 @@ function addCart(){
         success: function(data, status) 
         {
             user = data.split(" ")[0];
-            alert(user);
-            // add product_id
-            // add product_price
-            // add product_quantity
             
-            // $.ajax(
-            // {
-            //     method: "GET",
-            //     url: "../api/cartAPI/addCart.php",
-            //     dataType: "json",
-            //     data: {'username': username},
-            //     success: function(data, status) 
-            //     {
+            $.ajax(
+            {
+                method: "GET",
+                url: "../api/cartAPI/addCart.php",
+                dataType: "json",
+                data: {'username': user,
+                       'product_id': $("#modalId").html(),
+                       'quantity': $("#modalQty").val(),
+                       'unit_price': $("#modalPrice").html(),
+                },
+                success: function(data, status) 
+                {
                     
-            //     }
-            // }); //ajax 
+                }
+            }); //ajax 
         }
     }); //ajax 
 }
@@ -192,9 +192,11 @@ $(document).on('click', '.historyLink', function(){
         data: {"product_id" : $(this).attr("id")},
         
         success: function(data,status) {
+            $("#product").append("<div id='modalId' style='display:none'>" +data.product_id + "</div>");
             $("#product").append(data.product_name+ "<br />");
             $("#product").append("<img src='" + data.product_img + "' width='200' /> <br />");
-            $("#product").append("Price: $"+data.product_price + "<br />");
+            $("#product").append("<div id='modalPrice' style='display:none'>" +data.product_price + "</div>");
+            $("#product").append("<div> Price: $"+data.product_price + "</div></br>");
             $("#product").append("Quantity: "+data.product_stock+ "<br />");
             $("#product").append("Description: "+data.product_description + "<br />");
             $("#product").append("<input id='modalQty' value='1' style='width:20%; margin-top: 22px !important;' type='text' placeholder='Qty'>");
@@ -303,7 +305,7 @@ $(document).ready(function(){
 <!-- Control buttons -->
 <div class="btn-group" role="group" aria-label="..." style=" justify-content: center; text-align: center; width: 100%;">
   <button type='button' class="btn btn-default active-filter" value='0'> Show all</button>
-  <button type='button' class="btn btn-default" value='1'> Vegtables</button>
+  <button type='button' class="btn btn-default" value='1'> Vegetables</button>
   <button type='button' class="btn btn-default" value='2'> Fruits</button>
   <button type='button' class="btn btn-default" value='4'> Herbs & Spices</button>
   <button type='button' class="btn btn-default" value='3'> Misc Items</button>
