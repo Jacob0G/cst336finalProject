@@ -34,7 +34,7 @@
             margin-top:25px;
             margin-bottom:25px;
             /*background-color:gray;*/
-            border: solid yellow;
+            /*border: solid yellow;*/
         }
         #product_name{
             width:40%;
