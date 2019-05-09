@@ -55,6 +55,17 @@
       </style>
       <script>
         /*global $*/
+        var products;
+        var aUsername;
+        function setProductArray(arr){
+            products = arr;
+        }
+        function setUsername(data){
+            aUsername = data;
+        }
+        function getProductArray(){
+            return products;
+        }
         function update(prod_id){
             var username = $("#userName").html().split(" ")[0];
             $.ajax(
@@ -112,6 +123,9 @@
         function displayCart(userFullName){
             var array = userFullName.split(" ");
             user = array[0];
+            setUsername(user);
+            var total = 0;
+            var product_array = [];
             let i = 0;
             $.ajax({
                 type: "GET",
@@ -125,6 +139,9 @@
                         stringHtml += "<div id='cartCol' value='"+data[i].product_id+"'>";
                         var prod_id = data[i].product_id;
                         var price;
+                        var product = [];
+                        product.push(data[i].product_id);
+                        product.push(data[i].quantity);
                         $.ajax({
                             type: "GET",
                             async: false,
@@ -133,12 +150,17 @@
                             data: { "product_id": prod_id},
                             success: function(stuff,status) {
                                 price = stuff.product_price;
-                                stringHtml += "<div id='product_name' ><div id='prod_name_text'>"+ stuff.product_name + "</div></div>";
+                                product.push(price);
+                                stringHtml += "<div id='product_name' ><div id='prod_name_text'>"+ stuff.product_name +"&emsp;&emsp;$" + price+"</div></div>";
                             },
                         });//ajax
+                        total+=price* data[i].quantity;
+                        product_array.push(product);
                         stringHtml += "<div id='product_qty'> Qty: <input id='inputQty' class='qty_"+data[i].product_id+"' type='text' style='width:3%' value='" + data[i].quantity + "'> &emsp; <button id='updateBtn' onclick='update("+data[i].product_id+")' style='width:9%; height:1%;'>Update</button>&emsp;&emsp;<button id='delete' onclick='Delete("+data[i++].product_id+")' style='width:9%; height:1%;'>Delete</button></div></div>"
                     })//data for each
                     $("#cart_items").html(stringHtml);
+                    $("#total").html("Total: $" + total);
+                    setProductArray(product_array);
                 }// end success
             });// ajax call getAllCart
         } 
@@ -147,6 +169,20 @@
               alert($("#searchInput").val());
             });
             checkSession();
+            $("#checkoutBtn").on("click", function(){
+                $.ajax(
+                {
+                    method: "GET",
+                    url: "../api/cartAPI/checkout.php",
+                    dataType: "json",
+                    data: {'products': products,
+                          'username': aUsername,
+                    },
+                    success: function(data, status) 
+                    {
+                    }
+                }); //ajax 
+            });
         });//documentReady
         </script>
     </head>
@@ -200,17 +236,8 @@
     <div id = "mainBody">  
         <h2 id="userName"></h2>
         <div id="cart_items"></div>
-        <!--<div id = "productImage"></div><br>-->
-        <!--<div id = "productName"></div><br>-->
-        <!--<div id = "productDesc"></div><br>-->
-        <!--<div id = "productPrice"></div><br>-->
-        <!--<div id = "quantity"> Qty:-->
-        <!--<select id = "selectQuantity">-->
-        <!--</select>-->
-        <!--</div><br>-->
-       <!--<button id = "updateBtn">Update Quantity</button>-->
-       <!--<button id = "deleteBtn">Delete Item</button><br>-->
-       <button id = "checkoutBtn">Checkout</button><br>
+        <h2 id="total"></h2>
+        <button id ="checkoutBtn">Checkout</button><br>
        <div id = "successMessage"></div>
     </div>
     </body>

@@ -162,7 +162,12 @@ function addCart(){
         success: function(data, status) 
         {
             user = data.split(" ")[0];
-            
+            if(data == 'login'){
+                alert("sign in!");
+            }
+            if(data != 'login'){
+                alert("Product in your cart!");
+            }
             $.ajax(
             {
                 method: "POST",
@@ -175,7 +180,6 @@ function addCart(){
                 },
                 success: function(data, status) 
                 {
-                    
                 }
             }); //ajax 
         }

@@ -223,7 +223,7 @@
     <input type="text" placeholder="Enter Email" name="email" id = "email" required>
     <span id="emailError"></span> <br />
 
-    <label for="psw"><b>Password</b></label>
+    <label for="psw"><b>Password (8 or more characters)</b></label>
     <input type="password" placeholder="Enter Password" name="password" id = "password"  required>
 
     <label for="psw-confirm"><b>Confirm Password</b></label>
